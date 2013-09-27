@@ -25,7 +25,8 @@ HTML5 Number polyfill | Jonathan Stipe | https://github.com/jonstipe/number-poly
           min = /^-?\d+(?:\.\d+)?$/.test(min) ? parseFloat(min) : null;
           max = /^-?\d+(?:\.\d+)?$/.test(max) ? parseFloat(max) : null;
           if (isNaN(val)) {
-            val = min || 0;
+            var useDefault = false;
+            val = useDefault==false ? "" : min || 0;
           }
           return {
             min: min,
